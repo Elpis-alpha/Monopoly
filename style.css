@@ -1,0 +1,3670 @@
+@font-face{
+  src: url(assets/font/Montague.ttf);
+  font-family: MonopolyHead;
+}
+
+@font-face{
+  src: url(assets/font/har.ttf);
+  font-family: MonopolyBody;
+}
+
+@font-face{
+  src: url(assets/font/agency.ttf);
+  font-family: MonopolyAgency;
+}
+
+@keyframes hideOverflow{
+  0%{
+    overflow: hidden;
+  }
+  99%{
+    overflow: hidden;
+  }
+  100%{
+    overflow: visible;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  font-family: inherit;
+}
+
+div.site-topper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+}
+
+svg{
+  height: inherit;
+  width: inherit;
+}
+
+i{
+  height: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 1;
+}
+
+i svg{
+  z-index: -5;
+}
+
+body{
+  min-height: 100vh;
+  font-family: MonopolyBody;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+div.big-wrapper{
+  min-height: 100vh;
+}
+
+div.after-site-topper{
+  height: 4.5rem;
+}
+
+div.before-site-footer{
+  height: 2.7rem;
+}
+
+footer{
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+}
+
+footer > div.site-footer{
+  width: 100%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: .7rem;
+  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px 1px black;
+}
+
+footer > div.site-footer a#foot-contact{
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+footer > div.site-footer .footer-svgs{
+  width: 100%;
+  height: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+footer > div.site-footer .footer-svgs.show{
+  overflow: visible;
+}
+
+footer > div.site-footer .footer-svgs .inside-foot-svgs{
+  padding: .2rem;
+  background-color: rgb(58, 58, 58);
+  position: absolute;
+  bottom: 100%;
+  display: none;
+  flex-wrap: wrap;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  fill: aquamarine;
+  border-radius: .7rem;
+}
+
+footer > div.site-footer .footer-svgs.show .inside-foot-svgs{
+  display: flex;
+}
+
+footer > div.site-footer .footer-svgs .inside-foot-svgs::after{
+  content: " ";
+  border: 7px solid rgb(58, 58, 58);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -7px;
+  border-color: transparent;
+  border-top-color: rgb(58, 58, 58);
+}
+
+footer > div.site-footer .footer-svgs a{
+  text-decoration: none;
+  padding: .3rem;
+}
+
+@media screen and (max-width: 350px){
+  div.before-site-footer{
+    height: 3rem;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 179px){
+  div.before-site-footer{
+    height: 4rem;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 123px){
+  div.before-site-footer{
+    height: 5rem;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 94px){
+  div.before-site-footer{
+    height: 10rem;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+  }
+}
+
+nav{
+  height: 4rem;
+  overflow: hidden;
+  font-family: MonopolyHead;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px 1px black;
+}
+
+nav div{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+nav div.second-nav-item{
+  padding-left: 0;
+  justify-content: flex-end;
+}
+
+nav div.second-nav-item div{
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+@keyframes rotImg{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+nav div.second-nav-item div img{
+  border-radius: 50%;
+  animation: rotImg 5s infinite;
+  animation-timing-function: linear;
+  width: 3rem;
+}
+
+div.big-wrapper, div.main-content, main, div.monopoly-home{
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+div.monopoly-home-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+div.monopoly-home-content div.home-content-plays{
+  display: flex;
+}
+
+.slider{
+  -webkit-appearance: none;
+  width: 100%;
+  height: .3rem;
+  border-radius: .2rem;
+  background: orangered;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin: .5rem 0;
+}
+
+.slider:hover{
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  border-radius: 50%;
+  background: brown;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb{
+  width: 10px;
+  height: 25px;
+  border-radius: 50%;
+  background: brown;
+  cursor: pointer;
+}
+
+@keyframes slide0{
+  0%{
+    margin-left: 200vw
+  }
+  50%{
+    margin-left: -5rem;
+  }
+  62%{
+    margin-left: .5rem;
+  }
+  90%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slide1{
+  0%{
+    margin-left: 200vw
+  }
+  5%{
+    margin-left: 200vw;
+  }
+  62%{
+    margin-left: -5rem;
+  }
+  75%{
+    margin-left: .5rem;
+  }
+  90%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slide2{
+  0%{
+    margin-left: 200vw
+  }
+  10%{
+    margin-left: 200vw;
+  }
+  75%{
+    margin-left: -5rem;
+  }
+  87%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slide3{
+  0%{
+    margin-left: 200vw
+  }
+  15%{
+    margin-left: 200vw;
+  }
+  87%{
+    margin-left: -5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes halfOpacity{
+  0%{
+    opacity: 1
+  }
+  60%{
+    opacity: 0
+  }
+  100%{
+    opacity: 0
+  }
+}
+
+@keyframes fullOpacityOut{
+  0%{
+    opacity: 1
+  }
+  100%{
+    opacity: 0
+  }
+}
+
+@keyframes fullOpacityIn{
+  0%{
+    opacity: 0
+  }
+  100%{
+    opacity: 1
+  }
+}
+
+@keyframes halfBackground{
+  0%{
+    background-color: white;
+  }
+  75%{
+    background-color: white;
+  }
+  100%{
+    background-color: royalblue;
+  }
+}
+
+div.monopoly-home-content div.home-content-plays div{
+  margin: .5rem;
+  background-color: rgb(65, 105, 225);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 1px black;
+  cursor: pointer;
+  /* animation-timing-function: linear; */
+}
+
+div.monopoly-home-content div{
+  margin: .5rem;
+  background-color: rgb(65, 105, 225);
+  text-align: center;
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 4px .5px black;
+  cursor: pointer;
+  width: 80%;
+  margin-left: 200vw;
+  z-index: 15;
+}
+
+div.monopoly-home-content div.hidden{
+  opacity: .5;
+}
+
+div.monopoly-home.show-2 div.monopoly-home-content div.play-new{
+  animation: slide1 2.5s 1;
+}
+
+div.monopoly-home.show-2 div.monopoly-home-content div.play-continue{
+  animation: slide0 2.5s 1;
+}
+
+div.monopoly-home.show-2 div.monopoly-home-content div.play-load{
+  animation: slide2 2.5s 1;
+}
+
+div.monopoly-home.show-2 div.monopoly-home-content div.settings{
+  animation: slide3 2.5s 1;
+}
+
+div#home-overlay-pic{
+  transition: opacity 2s;
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+div#home-overlay-pic img{
+  width: auto;
+  object-fit: contain;
+}
+
+div.monopoly-home.show-1 div#home-overlay-pic{
+  opacity: 1;
+}
+
+div.monopoly-home.show-2 div#home-overlay-pic{
+  animation: halfOpacity 2.5s 1;
+  opacity: 0;
+  animation-timing-function: linear;
+}
+
+main{
+  background-color: white;
+}
+
+main.show-home{
+  animation: halfBackground 5s 1;
+  animation-timing-function: linear;
+  background-color: royalblue;
+}
+
+div.monopoly-home.show-2 div.monopoly-home-content div{
+  margin-left: .5rem;
+}
+
+div.monopoly-home-content{
+  z-index: 15;
+}
+
+div.monopoly-home-inner-content{
+  display: block;
+  z-index: 20;
+}
+
+div.monopoly-home-inner-content > div.new-game{
+  display: none;
+}
+
+div.monopoly-home-inner-content > div.load-game{
+  display: none;
+}
+
+div.monopoly-home-inner-content > div.in-sett{
+  display: none;
+}
+
+@keyframes slide0out{
+  0%{
+    margin-left: .5rem
+  }
+  62%{
+    margin-left: -200vw;
+  }
+  100%{
+    margin-left: -200vw;
+  }
+}
+
+@keyframes slide1out{
+  0%{
+    margin-left: .5rem
+  }
+  5%{
+    margin-left: .5rem;
+  }
+  75%{
+    margin-left: -200vw;
+  }
+  100%{
+    margin-left: -200vw;
+  }
+}
+
+@keyframes slide2out{
+  0%{
+    margin-left: .5rem
+  }
+  10%{
+    margin-left: .5rem;
+  }
+  87%{
+    margin-left: -200vw;
+  }
+  100%{
+    margin-left: -200vw;
+  }
+}
+
+@keyframes slide3out{
+  0%{
+    margin-left: .5rem
+  }
+  15%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: -200vw;
+  }
+}
+
+@keyframes slide0in{
+  0%{
+    margin-left: -200vw
+  }
+  50%{
+    margin-left: 5rem;
+  }
+  62%{
+    margin-left: .5rem;
+  }
+  90%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slide1in{
+  0%{
+    margin-left: -200vw
+  }
+  5%{
+    margin-left: -200vw;
+  }
+  62%{
+    margin-left: 5rem;
+  }
+  75%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slide2in{
+  0%{
+    margin-left: -200vw
+  }
+  10%{
+    margin-left: -200vw;
+  }
+  75%{
+    margin-left: 5rem;
+  }
+  87%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slide3in{
+  0%{
+    margin-left: -200vw
+  }
+  15%{
+    margin-left: -200vw;
+  }
+  87%{
+    margin-left: 5rem;
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slidein{
+  0%{
+    margin-left: 200vw
+  }
+  100%{
+    margin-left: .5rem;
+  }
+}
+
+@keyframes slideout{
+  0%{
+    margin-left: .5rem;
+  }
+  100%{
+    margin-left: 200vw
+  }
+}
+
+div.monopoly-home.show-2-X div.monopoly-home-content div.play-continue{
+  animation: slide0out 2s 1;
+}
+
+div.monopoly-home.show-2-X div.monopoly-home-content div.play-new{
+  animation: slide1out 2s 1;
+}
+
+div.monopoly-home.show-2-X div.monopoly-home-content div.play-load{
+  animation: slide2out 2s 1;
+}
+
+div.monopoly-home.show-2-X div.monopoly-home-content div.settings{
+  animation: slide3out 2s 1;
+}
+
+div.monopoly-home.show-2-Y div.monopoly-home-content div.play-continue{
+  animation: slide0in 2s 1;
+  margin: .5rem;
+}
+
+div.monopoly-home.show-2-Y div.monopoly-home-content div.play-new{
+  animation: slide1in 2s 1;
+  margin: .5rem;
+}
+
+div.monopoly-home.show-2-Y div.monopoly-home-content div.play-load{
+  animation: slide2in 2s 1;
+  margin: .5rem;
+}
+
+div.monopoly-home.show-2-Y div.monopoly-home-content div.settings{
+  animation: slide3in 2s 1;
+  margin: .5rem;
+}
+
+div.monopoly-home.hide-main div.monopoly-home-content > div{
+  display: none;
+}
+
+div.monopoly-home.show-2-X, div.monopoly-home.show-2-Y{
+  animation: hideOverflow 5s 1;
+}
+
+div.monopoly-home.show-sett div.monopoly-home-inner-content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: hideOverflow 4s 1;
+  padding: 1rem;
+}
+
+div.monopoly-home.show-sett div.in-sett{
+  animation: slidein 2s 1;
+  display: block;
+  flex: 1;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: .5rem;
+}
+
+div.monopoly-home.hide-sett div.in-sett{
+  animation: slideout 2s 1;
+}
+
+div.in-sett > div{
+  box-shadow: 0 0 5px 1px black;
+  padding: 1rem;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-X: hidden;
+  overflow-Y: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+div.in-sett > div > header{
+  font-weight: bold;
+  padding-bottom: .5rem;
+}
+
+div.in-sett > div > div > div.form-sett{
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: .5rem;
+}
+
+div.in-sett > div > div > div.form-sett input[type=text]{
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid black;
+  width: 50vw;
+}
+
+div.monopoly-home-inner-content div.home-back{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.monopoly-home-inner-content div.home-back button{
+  outline: 0;
+  width: 70%;
+  background-color: inherit;
+  border: 1px solid black;
+  border-radius: .5rem;
+  padding: .2rem 0;
+  transition: border .5s, box-shadow .5s;
+  cursor: pointer;
+}
+
+div.monopoly-home-inner-content div.home-back button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px .5px black;
+}
+
+div.monopoly-home{
+  overflow: hidden;
+}
+
+div.monopoly-home.ready{
+  overflow: visible;
+}
+
+div.monopoly-home.show-load div.monopoly-home-inner-content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: hideOverflow 4s 1;
+  padding: 1rem;
+}
+
+div.monopoly-home.show-load div.load-game{
+  animation: slidein 2s 1;
+  display: block;
+  flex: 1;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: .5rem;
+}
+
+div.monopoly-home.hide-load div.load-game{
+  animation: slideout 2s 1;
+}
+
+div.load-game > div{
+  box-shadow: 0 0 5px 1px black;
+  padding: 1rem;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-X: hidden;
+  overflow-Y: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+div.load-game > div > header{
+  font-weight: bold;
+  padding-bottom: .5rem;
+}
+
+div.load-game > div div.saved-game{
+  width: 50vw;
+  text-align: center;
+  margin: .4rem 0;
+  padding: .2rem;
+  border-radius: .5rem;
+  ;
+  border: 1px solid black;
+  transition: border .5s, box-shadow .5s;
+  font-size: .8rem;
+  cursor: pointer;
+}
+
+div.load-game > div div.saved-game span{
+  z-index: 5;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding-right: .4rem;
+  color: red;
+  transition: transform .5s;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: lowercase;
+  transform-origin: center;
+}
+
+div.load-game > div div.saved-game span:hover{
+  color: white;
+}
+
+div.load-game > div div.saved-game:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px .5px black;
+}
+
+div.monopoly-home.show-new div.monopoly-home-inner-content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: hideOverflow 4s 1;
+  padding: 1rem;
+}
+
+div.monopoly-home.show-new div.new-game{
+  animation: slidein 2s 1;
+  display: block;
+  flex: 1;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: .5rem;
+}
+
+div.monopoly-home.hide-new div.new-game{
+  animation: slideout 2s 1;
+}
+
+div.new-game > div{
+  box-shadow: 0 0 5px 1px black;
+  padding: 1rem;
+  padding-bottom: .3rem;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-X: hidden;
+  overflow-Y: auto;
+  width: 100%;
+  max-width: 600px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+div.new-game > div::-webkit-scrollbar-thumb{
+  display: none;
+}
+
+div.new-game > div > header{
+  font-weight: bold;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+div.new-game div#home-players-holder{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.new-game div#home-players-holder > div{
+  width: 48%;
+  margin: .5rem 0;
+  box-shadow: 0 0 4px 1px black;
+  margin-left: 2%;
+  padding: .5rem;
+  border-radius: .3rem;
+}
+
+div.new-game div#home-players-holder > div.remove{
+  opacity: .3;
+}
+
+div.new-game div#home-players-holder > div:nth-child(odd){
+  margin-right: 2%;
+  margin-left: 0%;
+}
+
+div.new-game div#home-players-holder > div input[type=text]{
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  flex: 1;
+  width: 100%;
+  margin-left: 5px;
+}
+
+div.new-game div#home-players-holder > div input{
+  border: 0;
+  outline: 0;
+  margin-left: 5px;
+}
+
+div.new-game div#home-players-holder > div div.my-color{
+  height: 80%;
+  flex: 0;
+  flex-basis: 2rem;
+  margin-left: 5px;
+  height: 1rem;
+  box-shadow: 0 0 2px .5px black;
+}
+
+div.new-game div#home-players-holder > div div.new-sett{
+  display: flex;
+  align-items: center;
+}
+
+div.new-game div#home-players-holder > div div.my-color input{
+  width: 100%;
+  opacity: 0;
+  margin-left: 0px;
+}
+
+div.new-game-all{
+  display: flex;
+  padding-top: .5rem;
+  flex-wrap: wrap;
+}
+
+div.monopoly-home-inner-content div.new-game-all div.home-back{
+  width: 50%;
+}
+
+div.monopoly-home-inner-content div.new-game-all div.home-back:last-child{
+  width: 100%;
+  margin-top: .5rem;
+  padding: 0 20%;
+}
+
+div.monopoly-home-inner-content div.new-game-all div.home-back select{
+  display: block;
+  font-size: .9rem;
+  color: black;
+  line-height: 1.3;
+  padding: .1rem .5rem;
+  width: 80%;
+  max-width: 100%;
+  box-shadow: 0 0 4px .2px black;
+  border-radius: .7rem;
+  background-color: transparent;
+  border: 0 none;
+  outline: 0 none;
+  transition: box-shadow 1s, background-color 1s;
+}
+
+div.monopoly-home-inner-content div.new-game-all div.home-back select.attract{
+  background-color: red;
+  box-shadow: 0 0 4px 2px red;
+}
+
+span#new-game-error{
+  height: .7rem;
+  font-size: .7rem;
+  text-align: center;
+  color: darkred;
+}
+
+div.monopoly-home{
+  display: none;
+  animation: hideOverflow 4s 1;
+}
+
+main.show-home div.monopoly-home{
+  display: flex;
+}
+
+main.hide-home div.monopoly-home{
+  animation: fullOpacityOut 1s 1;
+}
+
+main.hide-home{
+  animation: fullOpacityOut 1s 1;
+}
+
+
+/* Board Styles */
+
+main div.monopoly-board{
+  display: none;
+}
+
+main.show-home div.monopoly-board{
+  display: none;
+}
+
+main.show-board div.monopoly-board{
+  display: flex;
+}
+
+main.show-board{
+  background-color: brown;
+  animation: fullOpacityIn 1s 1;
+}
+
+div.monopoly-board{
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+div.in-monopoly-board{
+  flex: 1;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 55% 45%;
+}
+
+@media screen and (orientation: landscape){
+  div.in-monopoly-board{
+    grid-template-columns: 55% 45%;
+    grid-template-rows: auto;
+  }
+  @media screen and (max-width: 800px){
+    div.in-monopoly-board{
+      grid-template-rows: auto auto;
+      grid-template-columns: auto;
+    }
+  }
+}
+
+@media screen and (orientation: portrait){
+  div.in-monopoly-board{
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+}
+
+div.inside-monopoly-board{
+  padding: .5rem;
+}
+
+div.the-board{
+  display: grid;
+  grid-template-columns: 14% 8% 8% 8% 8% 8% 8% 8% 8% 8% 14%;
+  grid-template-rows: 14% 8% 8% 8% 8% 8% 8% 8% 8% 8% 14%;
+  z-index: 10;
+}
+
+div.the-board > div.the-details{
+  grid-area: 1 / 1 / 12 / 12;
+}
+
+div.the-board > div.center{
+  grid-area: 2 / 2 / 11 / 11;
+}
+
+div.the-board > div.bottom-right{
+  grid-row: 11;
+  grid-column: 11;
+}
+
+div.the-board > div.bottom-1{
+  grid-row: 11;
+  grid-column: 10;
+}
+
+div.the-board > div.bottom-2{
+  grid-row: 11;
+  grid-column: 9;
+}
+
+div.the-board > div.bottom-3{
+  grid-row: 11;
+  grid-column: 8;
+}
+
+div.the-board > div.bottom-4{
+  grid-row: 11;
+  grid-column: 7;
+}
+
+div.the-board > div.bottom-5{
+  grid-row: 11;
+  grid-column: 6;
+}
+
+div.the-board > div.bottom-6{
+  grid-row: 11;
+  grid-column: 5;
+}
+
+div.the-board > div.bottom-7{
+  grid-row: 11;
+  grid-column: 4;
+}
+
+div.the-board > div.bottom-8{
+  grid-row: 11;
+  grid-column: 3;
+}
+
+div.the-board > div.bottom-9{
+  grid-row: 11;
+  grid-column: 2;
+}
+
+div.the-board > div.bottom-left{
+  grid-row: 11;
+  grid-column: 1;
+}
+
+div.the-board > div.left-1{
+  grid-row: 10;
+  grid-column: 1;
+}
+
+div.the-board > div.left-2{
+  grid-row: 9;
+  grid-column: 1;
+}
+
+div.the-board > div.left-3{
+  grid-row: 8;
+  grid-column: 1;
+}
+
+div.the-board > div.left-4{
+  grid-row: 7;
+  grid-column: 1;
+}
+
+div.the-board > div.left-5{
+  grid-row: 6;
+  grid-column: 1;
+}
+
+div.the-board > div.left-6{
+  grid-row: 5;
+  grid-column: 1;
+}
+
+div.the-board > div.left-7{
+  grid-row: 4;
+  grid-column: 1;
+}
+
+div.the-board > div.left-8{
+  grid-row: 3;
+  grid-column: 1;
+}
+
+div.the-board > div.left-9{
+  grid-row: 2;
+  grid-column: 1;
+}
+
+div.the-board > div.top-left{
+  grid-row: 1;
+  grid-column: 1;
+}
+
+div.the-board > div.top-1{
+  grid-row: 1;
+  grid-column: 2;
+}
+
+div.the-board > div.top-2{
+  grid-row: 1;
+  grid-column: 3;
+}
+
+div.the-board > div.top-3{
+  grid-row: 1;
+  grid-column: 4;
+}
+
+div.the-board > div.top-4{
+  grid-row: 1;
+  grid-column: 5;
+}
+
+div.the-board > div.top-5{
+  grid-row: 1;
+  grid-column: 6;
+}
+
+div.the-board > div.top-6{
+  grid-row: 1;
+  grid-column: 7;
+}
+
+div.the-board > div.top-7{
+  grid-row: 1;
+  grid-column: 8;
+}
+
+div.the-board > div.top-8{
+  grid-row: 1;
+  grid-column: 9;
+}
+
+div.the-board > div.top-9{
+  grid-row: 1;
+  grid-column: 10;
+}
+
+div.the-board > div.top-right{
+  grid-row: 1;
+  grid-column: 11;
+}
+
+div.the-board > div.right-1{
+  grid-row: 2;
+  grid-column: 11;
+}
+
+div.the-board > div.right-2{
+  grid-row: 3;
+  grid-column: 11;
+}
+
+div.the-board > div.right-3{
+  grid-row: 4;
+  grid-column: 11;
+}
+
+div.the-board > div.right-4{
+  grid-row: 5;
+  grid-column: 11;
+}
+
+div.the-board > div.right-5{
+  grid-row: 6;
+  grid-column: 11;
+}
+
+div.the-board > div.right-6{
+  grid-row: 7;
+  grid-column: 11;
+}
+
+div.the-board > div.right-7{
+  grid-row: 8;
+  grid-column: 11;
+}
+
+div.the-board > div.right-8{
+  grid-row: 9;
+  grid-column: 11;
+}
+
+div.the-board > div.right-9{
+  grid-row: 10;
+  grid-column: 11;
+}
+
+div.the-board{
+  background-color: white;
+  box-shadow: 0px 0px 7px 2px black;
+  min-height: 20rem;
+}
+
+div.the-board > div{
+  border: .3px solid rgba(0, 0, 0, 0.57);
+  background-color: rgb(255, 255, 255);
+}
+
+div.the-board > div.center{
+  display: grid;
+  background-position: center;
+  background-size: contain;
+  background-color: green;
+  background-image: radial-gradient( greenyellow, green);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+div.the-board > div.center > div.board-title{
+  grid-area: 4 / 3 / 8 / 9;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div.the-board > div.center > div.community-chest-deck{
+  grid-area: 2 / 2 / 4 / 5;
+  transform: rotate(135deg);
+  margin-top: 1rem;
+  border: 1px dashed black;
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  align-items: center;
+  font-size: .9rem;
+  text-align: center;
+}
+
+div.the-board > div.center > div.chance-deck{
+  grid-area: 8 / 7 / 10 / 10;
+  border: 1px dashed black;
+  margin-bottom: 1rem;
+  border: 1px dashed black;
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  align-items: center;
+  font-size: .9rem;
+  text-align: center;
+  transform: rotate(315deg);
+}
+
+div.the-board > div{
+  z-index: 5;
+  overflow: hidden;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div.the-board > div.raise-up{
+  z-index: 10;
+}
+
+div.the-board div.bc-x{
+  transition: border .5s, box-shadow .5s;
+}
+
+div.the-board div.bc-x:hover{
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 0 7px 2px black;
+}
+
+div.the-board div.bc-x div.inside{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+div.the-board div.bc-x.bottom-right div.inside{
+  transform: rotate(315deg);
+}
+
+div.the-board div.bc-x div.arrow-left-go{
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(rgb(9, 214, 9), rgb(1, 39, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.bc-x div.go-text{
+  margin-top: -.7rem;
+  padding-bottom: .2rem;
+}
+
+div.the-board div.bc-x div.arrow-left-go svg{
+  fill: white;
+  width: 70%;
+  height: 70%;
+  transform: rotate(45deg);
+}
+
+div.the-board div.bc-x div.card-name{
+  text-align: center;
+  word-break: break-all;
+  font-size: 1.2vw;
+}
+
+div.the-board div.bc-x div.card-price{
+  text-align: center;
+  font-size: 1.3vw;
+  color: blue;
+}
+
+div.the-board div.bottom div.inside{
+  justify-content: flex-start;
+}
+
+div.the-board div.bottom div.card-color{
+  width: 100%;
+  height: 25%;
+}
+
+div.the-board div.left div.card-color{
+  width: 20%;
+  height: 100%;
+  flex: 0;
+  flex-basis: 20%;
+}
+
+div.the-board div.left div.text-inside{
+  flex: 0;
+  flex-basis: 75%;
+  margin-right: 5%;
+}
+
+div.the-board div.left div.inside{
+  flex-direction: row;
+}
+
+div.the-board div.bottom div.commu-chest{
+  width: 100%;
+  height: 25%;
+}
+
+div.the-board div.bottom div.commu-chest svg{
+  width: 100%;
+  height: 100%;
+  fill: rgb(59, 191, 235);
+}
+
+div.the-board div.bottom div.chance{
+  width: 100%;
+  height: 50%;
+  padding-top: .5rem;
+}
+
+div.the-board div.bottom div.chance svg{
+  width: 100%;
+  height: 100%;
+  fill: rgb(59, 191, 235);
+}
+
+div.the-board div.bottom div.income-tax{
+  width: 100%;
+  height: 15%;
+}
+
+div.the-board div.bottom div.station{
+  width: 100%;
+  height: 30%;
+}
+
+div.the-board div.bottom div.income-tax svg{
+  width: 100%;
+  height: 100%;
+  fill: rgb(235, 59, 59);
+}
+
+div.the-board div.bottom div.station svg{
+  width: 100%;
+  height: 100%;
+  fill: black;
+}
+
+@media screen and (min-width: 800px){
+  div.the-board div.bc-x div.card-name{
+    word-break: break-all;
+    font-size: .4vw;
+  }
+  div.the-board div.bc-x div.card-price{
+    font-size: .5vw;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  div.the-board div.bc-x div.card-name{
+    word-break: break-all;
+    font-size: .6vw;
+  }
+  div.the-board div.bc-x div.card-price{
+    font-size: .7vw;
+  }
+}
+
+div.the-board div.bottom-1 div.card-color{
+  background-color: #955438;
+}
+
+div.the-board div.bottom-2 div.inside{
+  justify-content: center;
+}
+
+div.the-board div.bottom-7 div.text-inside, div.the-board div.bottom-4 div.text-inside, div.the-board div.bottom-5 div.text-inside{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+div.the-board div.bottom-3 div.card-color{
+  background-color: #955438;
+}
+
+div.the-board div.bottom-6 div.card-color{
+  background-color: #aae0fa;
+}
+
+div.the-board div.bottom-8 div.card-color{
+  background-color: #aae0fa;
+}
+
+div.the-board div.bottom-9 div.card-color{
+  background-color: #aae0fa;
+}
+
+div.the-board div.bottom-left div.inside{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcoral;
+}
+
+div.the-board div.bottom-left div.inside div.visit-jail{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  /* background-color: rgb(170, 37, 37); */
+}
+
+div.the-board div.bottom-left div.inside div.visit-jail svg{
+  width: 70%;
+  height: 70%;
+}
+
+div.the-board div.bottom-left div.inside div.visit-jail span.bars{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+div.the-board div.left-1 div.card-color{
+  background-color: #d93a96;
+}
+
+div.the-board div.left-3 div.card-color{
+  background-color: #d93a96;
+}
+
+div.the-board div.left-4 div.card-color{
+  background-color: #d93a96;
+}
+
+div.the-board div.left-6 div.card-color{
+  background-color: #f7941d;
+}
+
+div.the-board div.left-8 div.card-color{
+  background-color: #f7941d;
+}
+
+div.the-board div.left-9 div.card-color{
+  background-color: #f7941d;
+}
+
+div.the-board div.left-7 div.card-color svg{
+  height: 100%;
+  width: 100%;
+  margin-left: -20%;
+  fill: rgb(59, 191, 235);
+}
+
+div.the-board div.left-5 div.card-color svg{
+  height: 100%;
+  width: 90%;
+  margin-left: -10%;
+  fill: black;
+}
+
+div.the-board div.left-2 div.card-color svg{
+  height: 100%;
+  width: 90%;
+  margin-left: -10%;
+  fill: rgb(153, 153, 9);
+}
+
+div.the-board div.top-left div.inside{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.the-board div.top-left div.inside div.free-park{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(30, 47, 99);
+  background-image: radial-gradient( white, royalblue);
+}
+
+div.the-board div.top-left div.inside div.free-park svg{
+  width: 70%;
+  height: 70%;
+}
+
+div.the-board div.top div.inside{
+  justify-content: center;
+}
+
+div.the-board div.top div.text-inside{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.the-board div.top div.card-color{
+  width: 100%;
+  height: 25%;
+  flex: 0;
+  flex-basis: 25%;
+}
+
+div.the-board div.top-1 div.card-color, div.the-board div.top-3 div.card-color, div.the-board div.top-4 div.card-color{
+  background-color: #ed1b24;
+}
+
+div.the-board div.top-6 div.card-color, div.the-board div.top-7 div.card-color, div.the-board div.top-9 div.card-color{
+  background-color: #fef200;
+}
+
+div.the-board div.top-2 div.card-color{
+  width: 100%;
+  height: auto;
+  flex: 0;
+  flex-basis: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.the-board div.top-2 div.card-color svg{
+  width: 80%;
+  height: 80%;
+  fill: rgb(59, 191, 235);
+}
+
+div.the-board div.top-5 div.card-color{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+div.the-board div.top-5 div.card-color svg{
+  width: 80%;
+  height: 80%;
+  fill: rgb(0, 0, 0);
+}
+
+div.the-board div.top-8 div.card-color{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.the-board div.top-8 div.card-color svg{
+  width: 80%;
+  height: 80%;
+  fill: #28e8a7;
+}
+
+div.the-board div.top-right div.inside{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.the-board div.top-right div.inside div.in-jail{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(30, 47, 99);
+  background-image: radial-gradient( white, red);
+}
+
+div.the-board div.top-right div.inside div.in-jail svg{
+  width: 70%;
+  height: 70%;
+}
+
+div.the-board div.right div.inside{
+  justify-content: center;
+  flex-direction: row;
+}
+
+div.the-board div.right div.text-inside{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.the-board div.right div.card-color{
+  width: 20%;
+  height: 100%;
+  flex: 0;
+  flex-basis: 20%;
+}
+
+div.the-board div.right-1 div.card-color, div.the-board div.right-2 div.card-color, div.the-board div.right-4 div.card-color{
+  background-color: #1fb25a;
+}
+
+div.the-board div.right-7 div.card-color, div.the-board div.right-9 div.card-color{
+  background-color: #0072bb;
+}
+
+div.the-board div.right-6 div.card-color{
+  width: 100%;
+  height: auto;
+  flex: 0;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.the-board div.right-6 div.card-color svg{
+  width: 50%;
+  height: 50%;
+  fill: rgb(59, 191, 235);
+}
+
+div.the-board div.right-3 div.card-color, div.the-board div.right-8 div.card-color, div.the-board div.right-5 div.card-color{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+div.the-board div.right-5 div.card-color svg{
+  width: 80%;
+  height: 80%;
+  fill: rgb(0, 0, 0);
+}
+
+div.the-board div.right-3 div.card-color svg{
+  width: 100%;
+  height: 100%;
+  fill: rgb(59, 191, 235);
+}
+
+div.the-board div.right-8 div.card-color svg{
+  width: 80%;
+  height: 80%;
+  fill: rgb(235, 59, 59);
+}
+
+div.the-board div.bc-x div.overlay-top{
+  /* display: none; */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+div.the-board div.bc-x div.overlay-top span.player-icon{
+  height: .7rem;
+  width: .7rem;
+  margin: .2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 3px 1px rgb(0, 0, 0);
+}
+
+div.the-board div.bc-x div.overlay-oth{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+div.the-board div.bc-x div.overlay-oth > span.im-on-top{
+  z-index: 10;
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+div.the-board div.bc-x div.overlay-oth > span{
+  z-index: 1;
+}
+
+
+div.the-board div.bc-x.bottom div.overlay-oth span.owner{
+  background-color: blue;
+  box-shadow: 0 0 3px 1px black;
+  position: absolute;
+  width: 50%;
+  height: .5rem;
+  top: 0; left: 0; right: 0;
+  margin: auto;
+}
+
+div.the-board div.bc-x.left div.overlay-oth span.owner{
+  background-color: blue;
+  box-shadow: 0 0 3px 1px black;
+  position: absolute;
+  width: .5rem;
+  height: 50%;
+  top: 0; bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+div.the-board div.bc-x.top div.overlay-oth span.owner{
+  background-color: blue;
+  box-shadow: 0 0 3px 1px black;
+  position: absolute;
+  width: 50%;
+  height: .5rem;
+  bottom: 0; left: 0; right: 0;
+  margin: auto;
+}
+
+div.the-board div.bc-x.right div.overlay-oth span.owner{
+  background-color: blue;
+  box-shadow: 0 0 3px 1px black;
+  position: absolute;
+  width: .5rem;
+  height: 50%;
+  top: 0; bottom: 0; left: 0;
+  margin: auto;
+}
+
+
+div.the-board div.bc-x div.overlay-oth span.house{
+  fill: blue;
+  position: absolute;
+  width: 100%;
+  top: .7rem;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+div.the-board div.bc-x.left div.overlay-oth span.house{
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: .6rem;
+}
+
+div.the-board div.bc-x.top div.overlay-oth span.house{
+  width: auto;
+  height: 100%;
+  top: 0;
+  bottom: .6rem;
+}
+
+div.the-board div.bc-x.right div.overlay-oth span.house{
+  width: auto;
+  height: 100%;
+  top: 0;
+  left: .6rem;
+}
+
+
+div.the-board div.bc-x div.overlay-oth span.house svg{
+  width: 40%;
+}
+
+div.the-board div.bc-x.left div.overlay-oth span.house svg{
+  height: auto;
+  width: 30%;
+}
+
+div.the-board div.bc-x.right div.overlay-oth span.house svg{
+  height: auto;
+  width: 30%;
+}
+
+
+div.the-board div.bc-x.raise-up div.overlay-oth{
+  z-index: 70;
+}
+
+div.the-dice{
+  display: none;
+}
+
+div.the-dice.show{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+}
+
+div.the-dice div.dice-container{
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+div.the-dice div.dice-container > div{
+  width: 20%;
+  margin: 1rem;
+}
+
+div.the-dice div.dice-container > div div.circle{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+div.the-dice div.dice-container > div div.circle div.line{
+  width: 4px;
+  height: 50%;
+  border: 2px solid white;
+  transform-origin: bottom;
+  transition: transform 2.5s ease-in-out;
+  transform: rotate(0deg);
+}
+
+div.the-dice div.dice-container > div div.circle span{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+div.the-monopoly-details{
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+div.the-monopoly-board{
+  z-index: 10;
+}
+
+div.the-monopoly-details div.mono-details-small-nav{
+  padding: .6rem .5rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+div.the-monopoly-details div.snav-content ul{
+  justify-content: space-around;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+div.the-monopoly-details div.snav-content ul li{
+  list-style-type: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: .3rem;
+  margin: .4rem .2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.185);
+  box-shadow: 0 0 2px .5px black;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: background-color .5s, color .5s;
+}
+
+div.the-monopoly-details div.snav-content ul li:hover{
+  background-color: rgba(0, 0, 0, 0.438);
+  color: white;
+}
+
+div.the-monopoly-details div.other-details{
+  display: flex;
+}
+
+div.the-monopoly-details div.other-details > div{
+  flex: 1;
+}
+
+div.the-monopoly-details div.player-cards-holder{
+  padding: .5rem 1rem;
+}
+
+div.the-monopoly-details div.player-cards-holder div.player-card{
+  padding: .3rem 0
+}
+
+div.the-monopoly-details div.player-cards-holder div.turn-me{
+  position: absolute;
+  padding: .3rem;
+  background-color: red;
+  border-radius: 50%;
+  top: 10%;
+  right: 5%;
+  z-index: 100;
+}
+
+div.player-card div.inside{
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.199);
+  border-radius: .5rem;
+  padding: .3rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.player-card div.inside:hover{
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.player-card div.inside div.color{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: .5rem;
+}
+
+div.the-monopoly-details div.other-command{
+  padding: .5rem 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  min-height: 5rem;
+}
+
+div.the-monopoly-details div.other-command div.the-log div.log{
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.233);
+  padding: 0.3rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 3px .5px black;
+  box-sizing: content-box;
+}
+
+div.the-monopoly-details div.other-command div.the-log div.log svg{
+  height: 100%;
+  width: 100%;
+  fill: white;
+  cursor: pointer;
+}
+
+div.the-monopoly-details div.the-log div.log svg:hover{
+  fill: grey;
+}
+
+div.the-monopoly-details div.other-command div.board-command button{
+  padding: .4rem .7rem;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.308);
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: box-shadow .5s;
+}
+
+div.the-monopoly-details div.board-command button:hover{
+  box-shadow: 0 0 2px .5px rgba(0, 0, 0, 0.459);
+}
+
+div.the-monopoly-log{
+  display: none;
+}
+
+div.the-monopoly-log.show{
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.411);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.the-monopoly-log div.m-log{
+  z-index: 5;
+  min-width: 200px;
+  width: 50%;
+  height: 70%;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: .1rem;
+  font-family: MonopolyAgency;
+}
+
+div.the-monopoly-log div.m-log div.im-log{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  border-radius: .1rem;
+  padding: .5rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.the-monopoly-log div.m-log div.im-log div.log-head{
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 2px solid grey;
+  padding-top: .2rem;
+  padding-bottom: .3rem;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+div.the-monopoly-log div.m-log div.im-log div.log-message{
+  text-align: center;
+  font-size: 1rem;
+  padding: .5rem 0;
+  margin: .3rem 0;
+  width: 80%;
+  border-radius: .3rem;
+  background-color: rgba(56, 56, 199, 0.425);
+}
+
+div.the-monopoly-log div.m-log span#remove-log{
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  color: red;
+  font-size: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: inline;
+  line-height: 1rem;
+  margin: .5rem .5rem 0 0;
+}
+
+div.the-board > div.over-details{
+  z-index: 15;
+}
+
+div.the-board div.the-details{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.637);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  transition: opacity 2s;
+}
+
+div.the-board div.the-details.show-mcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.m-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-mcard div.m-card{
+  width: 30%;
+  min-height: 50%;
+  background-color: white;
+  border: 2px solid yellow;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+}
+
+div.the-board div.the-details.show-mcard div.m-card div.inside{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.m-card div.inside div.card-color{
+  width: 100%;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: .5rem 0;
+}
+
+div.the-board div.the-details div.m-card div.inside div.card-price{
+  font-size: .7rem;
+  padding: .2rem 0;
+}
+
+div.the-board div.the-details div.m-card div.inside div.card-house-info{
+  width: 100%;
+  flex: 1;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.m-card div.card-house-info > div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-size: .7rem;
+}
+
+div.the-board div.the-details div.m-card div.card-house-info span.houses{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+div.the-board div.the-details div.m-card div.card-house-info span.houses svg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 15%; */
+  width: 1rem;
+  fill: green;
+  margin-right: .2rem;
+}
+
+div.the-board div.the-details div.m-card div.card-mortgage{
+  padding-bottom: .2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.the-board div.the-details.show-scard{
+  display: flex;
+}
+
+div.the-board div.the-details div.s-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-scard div.s-card{
+  width: 30%;
+  min-height: 50%;
+  background-color: white;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+}
+
+div.the-board div.the-details.show-scard div.s-card div.inside{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.s-card div.inside div.card-name{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: .5rem 0;
+}
+
+div.the-board div.the-details div.s-card div.inside div.card-price{
+  color: black;
+  font-size: .7rem;
+  padding: .2rem 0;
+  flex: 1;
+}
+
+div.the-board div.the-details div.s-card div.inside div.card-house-info{
+  width: 100%;
+  flex: 1;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.s-card div.card-house-info > div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-size: .7rem;
+}
+
+div.the-board div.the-details div.s-card div.card-house-info span.houses{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+div.the-board div.the-details div.s-card div.card-mortgage{
+  padding-bottom: .2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+div.the-board div.the-details div.s-card div.card-cover{
+  z-index: 5;
+  position: absolute;
+  top: 0; right: 0;
+  left: 0; bottom: 0;
+  height: 100%; width: 100%;
+  opacity: .3;
+  padding: 0 20%;
+}
+
+div.the-board div.the-details.show-ucard{
+  display: flex;
+}
+
+div.the-board div.the-details div.u-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-ucard div.u-card{
+  width: 30%;
+  min-height: 50%;
+  background-color: white;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+}
+
+div.the-board div.the-details.show-ucard div.u-card div.inside{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.u-card div.inside div.card-name{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: .5rem 0;
+}
+
+div.the-board div.the-details div.u-card div.inside div.card-price{
+  color: black;
+  font-size: .7rem;
+  padding: .2rem 0;
+  flex: 1;
+}
+
+div.the-board div.the-details div.u-card div.card-info{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  font-size: .8rem;
+  flex: 1;
+}
+
+div.the-board div.the-details div.u-card div.card-mortgage{
+  padding-bottom: .2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+div.the-board div.the-details div.u-card div.card-cover{
+  z-index: 5;
+  position: absolute;
+  top: 0; right: 0;
+  left: 0; bottom: 0;
+  height: 100%; width: 100%;
+  opacity: .3;
+  padding: 0 20%;
+}
+
+div.the-board div.the-details.show-xcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.x-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-xcard div.x-card{
+  width: 30%;
+  min-height: 50%;
+  background-color: white;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+}
+
+div.the-board div.the-details.show-xcard div.x-card div.inside{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 5;
+}
+
+div.the-board div.the-details div.x-card div.inside div.card-name{
+  font-weight: bold;
+  flex: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: .5rem;
+  word-break: break-word;
+}
+
+div.the-board div.the-details div.x-card div.card-info{
+  padding: .2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.the-board div.the-details.show-xcard div.x-card div.background{
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  opacity: .5;
+  padding: 1rem;
+}
+
+div.the-board div.the-details.show-pcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.p-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-pcard div.p-card{
+  border-radius: 1rem;
+  min-width: 50%;
+  min-height: 50%;
+  max-width: 80%;
+  background-image: linear-gradient(green, greenyellow, green);
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+}
+
+div.the-board div.the-details.show-pcard div.p-card div.inside{
+  /* width: 100%; */
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.p-card div.inside div.sec-1{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: .5rem 0;
+  border-bottom: 1px solid black;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-1 div.player-color{
+  width: 2rem;
+  height: 2rem;
+  background-color: #fef200;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 1px;
+  margin-right: .5rem;
+}
+
+div.the-board div.the-details div.p-card div.inside div.sec-2{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .8rem;
+  padding: .5rem 0;
+}
+
+div.the-board div.the-details div.p-card div.inside div.sec-2 > div{
+  flex-basis: 50%;
+  text-align: left;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-2 > div:last-child{
+  text-align: right;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-2 div.seprator{
+  height: 1rem;
+  flex-basis: 0%;
+  border: 1px solid black;
+}
+
+div.the-board div.the-details div.p-card div.inside div.sec-3{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: .9rem;
+  padding: .5rem 0;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-3 div.properties{
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+  font-size: .9rem;
+  padding: .5rem 0;
+  border: 1px solid black;
+  padding: .5rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-3 div.properties > div.prop-card{
+  min-height: 100%;
+  padding-right: .5rem;
+  height: auto;
+}
+
+main div.card-s-deck{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 5.5rem;
+  background-color: green;
+  font-size: inherit;
+  padding: 1px;
+}
+
+main div.card-s-deck > div{
+  background-color: white;
+  width: 100%;
+}
+
+main div.card-s-deck .card-name{
+  flex: 1;
+  width: 80%;
+  font-weight: bold;
+  background-color: green;
+}
+
+main div.card-s-deck.util-prop .card-name{
+  background-color: white;
+  width: 100%
+}
+
+main div.card-s-deck.sta-prop .card-name{
+  background-color: white;
+  width: 100%
+}
+
+main div.card-s-deck .card-rent,
+main div.card-s-deck .card-mortgage,
+main div.card-s-deck .card-price{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+main div.card-s-deck .card-house-info{
+  background-color: white;
+  display: block;
+}
+
+main div.card-s-deck .card-house-info div{
+  display: block;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  background-color: green;
+  margin: auto;
+  width: 80%;
+  padding: 1px;
+}
+
+main div.card-s-deck.sta-prop .card-house-info div{
+  color: white;
+  background-color: black;
+}
+
+main div.card-s-deck .card-house-info span{
+  color: black;
+  display: block;
+  background-color: white;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-3 div.properties::-webkit-scrollbar{
+  height: .3rem;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-3 div.properties::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+}
+
+div.the-board div.the-details div.p-card div.inside
+div.sec-3 div.properties::-webkit-scrollbar-thumb{
+  background-color: rgba(0, 0, 0, 0.432);
+}
+
+div.the-board div.the-details.show-bcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.b-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-bcard div.b-card{
+  border-radius: 1rem;
+  width: 50%;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-color: white;
+}
+
+div.the-board div.the-details.show-bcard div.b-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.b-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: .1rem 0;
+  border-bottom: 1px solid black;
+}
+
+div.the-board div.the-details div.b-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+}
+
+div.the-board div.the-details div.b-card div.inside div.sec-2:nth-of-type(3){
+  font-size: .9rem;
+  font-style: italic;
+}
+
+div.the-board div.the-details div.b-card div.inside div.sec-3{
+  width: 1rem;
+  height: 1rem;
+  fill: green;
+}
+
+div.the-board div.the-details div.b-card div.inside div.sec-4{
+  width: 100%;
+}
+
+div.the-board div.the-details div.b-card div.inside div.sec-4 button{
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: .4rem;
+  transition: border .5s, box-shadow .5s;
+}
+
+div.the-board div.the-details div.b-card div.inside div.sec-4 button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.the-board div.the-details.show-lcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.l-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-lcard div.l-card{
+  border-radius: 1rem;
+  width: 50%;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-color: white;
+}
+
+div.the-board div.the-details.show-lcard div.l-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.l-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: .1rem 0;
+  border-bottom: 1px solid black;
+}
+
+div.the-board div.the-details div.l-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+}
+
+div.the-board div.the-details div.l-card div.inside div.sec-3{
+  width: 1rem;
+  height: 1rem;
+  fill: red;
+}
+
+div.the-board div.the-details div.l-card div.inside div.sec-4{
+  width: 100%;
+}
+
+div.the-board div.the-details div.l-card div.inside div.sec-4 button{
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: .4rem;
+  transition: border .5s, box-shadow .5s;
+}
+
+div.the-board div.the-details div.l-card div.inside div.sec-4 button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.the-board div.the-details.show-mtcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.mt-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-mtcard div.mt-card{
+  box-shadow: 0 0 7px 1px black;
+  border-radius: 1rem;
+  width: 50%;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-color: white;
+}
+
+div.the-board div.the-details.show-mtcard div.mt-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.mt-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: .1rem 0;
+  border-bottom: 1px solid black;
+}
+
+div.the-board div.the-details div.mt-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+}
+
+div.the-board div.the-details div.mt-card div.inside div.sec-2:nth-of-type(3){
+  font-size: .9rem;
+  font-style: italic;
+}
+
+div.the-board div.the-details div.mt-card div.inside div.sec-3{
+  width: 1rem;
+  height: 1rem;
+  fill: red;
+}
+
+div.the-board div.the-details div.mt-card div.inside div.sec-4{
+  width: 100%;
+}
+
+div.the-board div.the-details div.mt-card div.inside div.sec-4 button{
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: .4rem;
+  transition: border .5s, box-shadow .5s;
+}
+
+div.the-board div.the-details div.mt-card div.inside div.sec-4 button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.the-board div.the-details.show-rcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.r-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-rcard div.r-card{
+  border-radius: 1rem;
+  width: 50%;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-color: white;
+}
+
+div.the-board div.the-details.show-rcard div.r-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.r-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: .1rem 0;
+  border-bottom: 1px solid black;
+}
+
+div.the-board div.the-details div.r-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+}
+
+div.the-board div.the-details div.r-card div.inside div.sec-2:nth-of-type(3){
+  font-size: .9rem;
+  font-style: italic;
+}
+
+div.the-board div.the-details div.r-card div.inside div.sec-3{
+  width: 1rem;
+  height: 1rem;
+  fill: red;
+}
+
+div.the-board div.the-details div.r-card div.inside div.sec-4{
+  width: 100%;
+}
+
+div.the-board div.the-details div.r-card div.inside div.sec-4 button{
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: .4rem;
+  transition: border .5s, box-shadow .5s;
+}
+
+div.the-board div.the-details div.r-card div.inside div.sec-4 button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.the-board div.the-details.show-tcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.t-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-tcard div.t-card{
+  border-radius: 1rem;
+  width: 80%;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-image: radial-gradient(greenyellow, green);
+  box-shadow: 0 0 7px 1px black;
+}
+
+div.the-board div.the-details.show-tcard div.t-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+div.the-board div.the-details div.t-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-1 input{
+  outline: 0;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding-bottom: .5rem;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.prop{
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 10rem;
+  overflow: auto;
+  margin: 0 .2rem;
+  padding: .5rem;
+  background-color: transparent;
+  flex: 1;
+  border: 2px solid black;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.prop::-webkit-scrollbar{
+  width: .3rem;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.prop::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.prop::-webkit-scrollbar-thumb{
+  background-color: rgba(0, 0, 0, 0.432);
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.prop div.prop-card{
+  z-index: 5;
+  cursor: pointer;
+  margin: .5rem 0;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.prop div.over-card{
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  height: 100%; width: 100%;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.prop div.over-card.active{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 input{
+  width: 3rem;
+  outline: 0; border: 0;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.monz-t{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .2rem;
+  padding: .5rem;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-2 div.monz-t label{
+  font-weight: bold;
+  padding-right: .2rem;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-4{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-4 button{
+  flex: 1;
+  margin: 0 .5rem;
+  cursor: pointer;
+  border: 1px solid black;
+  outline: 0;
+  background-color: green;
+  border-radius: .4rem;
+  transition: border .5s, box-shadow .5s;
+  padding: .2rem 0;
+}
+
+div.the-board div.the-details div.t-card div.inside div.sec-4 button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.the-board div.the-details.show-acard{
+  display: flex;
+}
+
+div.the-board div.the-details div.a-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-acard div.a-card{
+  border-radius: 1rem;
+  width: 80%;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-image: radial-gradient(greenyellow, green);
+  box-shadow: 0 0 7px 1px black;
+}
+
+div.the-board div.the-details.show-acard div.a-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2 > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding-bottom: .5rem;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2 div.prop{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 10rem;
+  overflow: auto;
+  margin: 0 .2rem;
+  padding: .5rem;
+  flex: 1;
+  background-color: transparent;
+  border: 2px solid black;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2 div.prop::-webkit-scrollbar{
+  width: .3rem;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2 div.prop::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2 div.prop::-webkit-scrollbar-thumb{
+  background-color: rgba(0, 0, 0, 0.432);
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2 div.prop div.prop-card{
+  margin: .5rem 0;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-2 div.monz-t{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .2rem;
+  padding: .5rem;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-4{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-4 button{
+  flex: 1;
+  margin: 0 .5rem;
+  cursor: pointer;
+  border: 1px solid black;
+  outline: 0;
+  background-color: green;
+  border-radius: .4rem;
+  transition: border .5s, box-shadow .5s;
+  padding: .2rem 0;
+}
+
+div.the-board div.the-details div.a-card div.inside div.sec-4 button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.the-board div.the-details.show-ccard{
+  display: flex;
+}
+
+div.the-board div.the-details div.c-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-ccard div.c-card{
+  border-radius: 1rem;
+  width: 50%;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-color: white;
+}
+
+div.the-board div.the-details.show-ccard div.c-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.c-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: .1rem 0;
+  border-bottom: 1px solid black;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.c-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.c-card div.inside div.sec-2:nth-of-type(3){
+  font-size: .9rem;
+  font-style: italic;
+}
+
+div.the-board div.the-details div.c-card div.inside div.sec-3{
+  position: absolute;
+  top: 0; left: 0;
+  bottom: 0; right: 0;
+  width: 100%; height: 100%;
+  fill: red;
+  z-index: 5;
+  opacity: .3;
+}
+
+div.the-board div.the-details div.c-card div.inside div.sec-4{
+  z-index: 10;
+  width: 100%;
+}
+
+div.the-board div.the-details div.c-card div.inside div.sec-4 button{
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: .4rem;
+  transition: border .5s, box-shadow .5s;
+}
+
+div.the-board div.the-details div.c-card div.inside div.sec-4 button:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px .5px black;
+}
+
+div.the-board div.the-details.show-dcard{
+  display: flex;
+}
+
+div.the-board div.the-details div.d-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-dcard div.d-card{
+  border-radius: 1rem;
+  width: 50%;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-image :radial-gradient(white, green);
+}
+
+div.the-board div.the-details.show-dcard div.d-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.d-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: .1rem 0;
+  border-bottom: 1px solid black;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.d-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  text-align: center;
+  flex-direction: row;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.d-card div.inside div.sec-2 div.action-x > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+}
+
+div.the-board div.the-details div.d-card div.inside div.sec-2 div.action-x > div button{
+  width: 100%;
+  padding: .2rem .5rem;
+  cursor: pointer;
+  box-shadow: 0 0 3px .5px black;
+  border: 1px solid transparent;
+  outline: 0;
+  border-radius: .4rem;
+  transition: background-color .5s, box-shadow .5s;
+}
+
+div.the-board div.the-details div.d-card div.inside div.sec-2 div.action-x > div button:hover{
+  background-color: lightblue;
+}
+
+div.the-board div.the-details.show-ecard{
+  display: flex;
+}
+
+div.the-board div.the-details div.e-card{
+  display: none;
+}
+
+div.the-board div.the-details.show-ecard div.e-card{
+  border-radius: 1rem;
+  width: 50%;
+  box-shadow: 0 0 7px 1px black;
+  text-align: center;
+  display: block;
+  font-family: MonopolyAgency;
+  padding: .5rem 0;
+  background-image :radial-gradient(white, green);
+}
+
+div.the-board div.the-details.show-ecard div.e-card div.inside{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-1{
+  font-weight: bold;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: .1rem 0;
+  border-bottom: 1px solid black;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-2{
+  padding: .3rem 0;
+  width: 80%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  text-align: center;
+  flex-direction: row;
+  z-index: 10;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-2 div.auction-x > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-2 div.auction-x{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-left: .3rem;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-2 div.auction-x > div span{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: .3rem;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-2 div.auction-x > div span:last-child{
+  padding-bottom: 0rem;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-2 div.auction-x > div span button{
+  width: 40%;
+  cursor: pointer;
+  box-shadow: 0 0 3px .5px black;
+  border: 1px solid transparent;
+  background-color: transparent;
+  outline: 0;
+  border-radius: .4rem;
+  transition: background-color .5s, box-shadow .5s;
+}
+
+div.the-board div.the-details div.e-card div.inside div.sec-2 div.auction-x > div span input{
+  width: 100%;
+  background-color: transparent;
+  outline: 0; border: 0;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+div.the-board div.the-details div.d-card div.inside div.sec-2 div.auction-x > div button:hover{
+  background-color: lightblue;
+}
+
+div.the-board div.the-details.show-no-card{
+  display: none;
+}
+
+div.the-board div.the-details > div{
+  z-index: 10;
+  display: none;
+}
+
+div.the-board div.the-details span#under-cover{
+  z-index: 5;
+  position: absolute;
+  top: 0; right: 0;
+  left: 0; bottom: 0;
+  height: 100%; width: 100%;
+}
+
+.f-c-a-b{
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
