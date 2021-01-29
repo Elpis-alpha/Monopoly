@@ -3112,17 +3112,11 @@ const BoardCtrl = (function () {
 
     }
 
-    const endTurn = () {
+    const endTurn = () => {
 
       setBoardStatus('played')
 
       switchTurn()
-
-    }
-
-      switchTurn()
-      
-      setBoardStatus('played')
 
     }
 
