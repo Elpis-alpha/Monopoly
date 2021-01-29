@@ -3247,5 +3247,5 @@ const BoardCtrl = (function () {
 })()
 
 document.addEventListener('DOMContentLoaded', () => {
-  BoardCtrl.continueBoard(StorageCtrl.getBoard())
+  // BoardCtrl.continueBoard(StorageCtrl.getBoard())
 })
