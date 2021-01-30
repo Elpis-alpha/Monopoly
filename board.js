@@ -3148,6 +3148,8 @@ const BoardCtrl = (function () {
 
     saveBoard(board)
 
+    const player = getCurrentPlayer()
+
     beginBoardAnimations()
 
     if (board.turnStatus === 'play') {
